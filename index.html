@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			/* 	p:last-child {
+				background: #ff0000;
+			} */
+
+			#box {
+				/* border: 1px solid red; */
+			}
+			.item{
+				position: relative;
+			}
+			.item::after{
+				content: '';
+				position: absolute;
+				width: 1px;
+				height: 10px;
+				background-color: red;
+				right: 0;
+				top: 0;
+			}
+			.item:last-child::after{
+				width: 0px;
+				height: 0px;
+			}
+			.parent p.specific-class{
+				color: pink;
+			}
+			.parent p.specific-class:nth-last-of-type(4) {
+			    color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<h1>这是标题</h1>
+			<p>第一个段落。</p>
+			<p>第二个段落。</p>
+			<p>第三个段落。</p>
+			<p>第四个段落。</p>
+			<div>
+				<p>dasda</p>
+			</div>
+			<div class="item">
+				<p>1234</p>
+			</div>
+			<div class="item">
+				<p>1234</p>
+			</div>
+			<div class="item">
+				<p>1234</p>
+			</div>
+			<div class="item">
+				<p>1234</p>
+			</div>
+			<div>123</div>
+		</div>
+		
+		<div class="parent">
+		    <p>这是文本段落1</p>
+		    <p class="specific-class">这是文本段落2</p>
+		    <p>这是文本段落3</p>
+		    <p class="specific-class">这是文本段落4</p>
+		    <p>这是文本段落5</p>
+		</div>
+	</body>
+</html>
